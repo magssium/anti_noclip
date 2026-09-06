@@ -57,7 +57,6 @@ RunService.Heartbeat:Connect(function(deltaTime)
 			local hrp = character.HumanoidRootPart
 			local currentPos = hrp.Position
 
-			-- Ignore physics-heavy launches to prevent false-positives
 			if hrp.AssemblyLinearVelocity.Magnitude > 120 then
 				continue
 			end
@@ -90,7 +89,7 @@ RunService.Heartbeat:Connect(function(deltaTime)
 				if violationCounters[player] >= NoclipConfig.MAX_VIOLATIONS then
 					warn("Anti-Noclip: " .. player.Name .. " exceeded violation limit.")
 					
-					-- Handle data cleanup first to ensure no leaks if kicked
+					-- handle data cleanup first to ensure no leaks if kicked
 					local kickPos = lastPos
 					player:Kick("Wall hacking detected")
 					
@@ -108,7 +107,6 @@ RunService.Heartbeat:Connect(function(deltaTime)
 	end
 end)
 
--- [[ MEMORY CLEANUP SECURITY ]]
 Players.PlayerRemoving:Connect(function(player)
 	lastSafePositions[player] = nil
 	violationCounters[player] = nil
