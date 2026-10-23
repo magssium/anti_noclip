@@ -42,4 +42,3 @@ return NoclipConfig
 ## Commissions
 I specialize in writing highly optimized, defensive backend infrastructure, data security, and exploit prevention systems. If you need a scripter who knows how to write clean, modular, and un-exploitable code, hit me up :)
 
-* **GitHub:** @anti-noclip
